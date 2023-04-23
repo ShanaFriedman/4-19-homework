@@ -1,0 +1,24 @@
+﻿@using April_19_homework.Data
+@model HomeViewModel
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+
+        @foreach (Ad a in Model.Ads)
+        {
+            <div class="bg-light p-4 rounded shadow mb-3">
+                <h5>Listed on @a.Date.ToLongDateString()</h5>
+                <h5>Phone Number: @a.PhoneNumber</h5>
+                <h3>Details:</h3>
+                <p>@a.Description</p>
+                @if (User.Identity.IsAuthenticated && Model.User.Id == a.UserId)
+                {
+                    <form method="post" action="/home/deletead">
+                        <input type="hidden" name="id" value="@a.Id" />
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                }
+            </div>
+        }
+    </div>
+</div>

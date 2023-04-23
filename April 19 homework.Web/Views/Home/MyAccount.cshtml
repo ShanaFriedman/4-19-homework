@@ -1,0 +1,18 @@
+﻿@using April_19_homework.Data
+@model List<Ad>
+
+<div class="row">
+    @foreach(Ad a in Model)
+    {
+        <div class="bg-light p-4 rounded shadow mb-3">
+            <h5>Listed on @a.Date.ToLongDateString()</h5>
+            <h5>Phone Number: @a.PhoneNumber</h5>
+            <h3>Details:</h3>
+            <p>@a.Description</p>
+            <form method="post" action="/home/deletead">
+                <input type="hidden" name="id" value="3" />
+                <button class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+    }
+</div>
