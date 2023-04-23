@@ -29,7 +29,7 @@ namespace April_19_homework.Web.Controllers
 
         public IActionResult Login()
         {
-            string message = (string)TempData["message"] ?? null;
+            string message = (string)TempData["message"];
             
             return View(model: message);
         }
