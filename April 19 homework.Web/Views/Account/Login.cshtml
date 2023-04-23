@@ -9,8 +9,12 @@
     <form method="post" action="/account/login">
         <input type="text" class="form-control" name="email" placeholder="Email" />
         <br />
-        <input type="password" class="form-control" name="password" placeholder="Password" />
+        <input type="password" class="form-control password" name="password" placeholder="Password" />
         <br />
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input show-password" id="show-password" value="true">
+            <label class="form-check-label" for="show-password">Show Password</label>
+        </div>
         <button class="btn btn-primary w-100 btn-lg">Login</button>
         <a href="/account/signup">Don't have an account? Sign up here!</a>
     </form>

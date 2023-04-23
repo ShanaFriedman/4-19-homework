@@ -38,7 +38,7 @@ namespace April_19_homework.Data
                 return null;
             };
 
-            if (!BCrypt.Net.BCrypt.Verify(password, u.PasswordHash))
+            if(!BCrypt.Net.BCrypt.Verify(password, u.PasswordHash))
             {
                 return null;
             }

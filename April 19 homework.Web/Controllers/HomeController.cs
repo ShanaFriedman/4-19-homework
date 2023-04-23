@@ -39,7 +39,7 @@ namespace April_19_homework.Web.Controllers
             repo.NewAd(a, u.Id);
             return RedirectToAction("Index");
         }
-
+        [Authorize]
         public IActionResult MyAccount()
         {
             var repo = new UserRepository(_connectionString);

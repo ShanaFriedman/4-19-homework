@@ -1,5 +1,6 @@
 ﻿using April_19_homework.Data;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -24,7 +25,7 @@ namespace April_19_homework.Web.Controllers
             UserRepository repo = new(_connectionString);
             repo.AddUser(u, password);
             
-            return Redirect("/home/index");
+            return Redirect("/account/login");
         }
 
         public IActionResult Login()
@@ -57,7 +58,7 @@ namespace April_19_homework.Web.Controllers
 
             return Redirect("/home/index");
         }
-
+        
         public IActionResult Logout()
         {
             HttpContext.SignOutAsync().Wait();
